@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import { config } from "dotenv";
-import readmRouter from "./routes/readm/index.js";
-import mangafreakRouter from "./routes/mangafreak/index.js";
-import mangamonksRouter from "./routes/mangamonks/index.js";
+import readmRouter from "./routes/manga/readm/index.js";
+import mangafreakRouter from "./routes/manga/mangafreak/index.js";
+import mangamonksRouter from "./routes/manga/mangamonks/index.js";
 import { content } from "./lib/ex.js";
 
 config();
