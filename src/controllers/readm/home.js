@@ -16,7 +16,7 @@ export const readmHome = async (_, res) => {
     $("#manga-hot-updates .item").each((_, el) => {
       data.hotMangaUpdates.push({
         id: $(el).find("a").attr("href").split("manga")[1].replace("/", ""),
-        img: $(el).find("img").attr("src"),
+        img: `${process.env.READM_BASE_URL}/${$(el).find("img").attr("src")}`,
         title: $(el).find("a:nth-child(2) strong").text(),
         bookmarks: $(el).find(".subscribe-count").text().trim(),
         favorites: $(el).find(".favorite-count").text().trim(),

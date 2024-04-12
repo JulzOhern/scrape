@@ -1,20 +1,22 @@
 import { gotScraping } from "got-scraping";
 import { load } from "cheerio";
 
-export const readmRead = async (req, res) => {
+export const mangamonksRead = async (req, res) => {
   try {
     const { infoId, chapter } = req.params;
 
     const data = [];
 
     const response = await gotScraping.get(
-      `${process.env.READM_BASE_URL}/manga/${infoId}/${chapter}/all-pages`
+      `${process.env.MANGAMONKS_BASE_URL}/manga/${infoId}/${chapter}/all-pages`
     );
     const $ = load(response.body);
 
-    $(".ui.grid.chapter .ch-images center img").each((_, el) => {
+    $("#zoomContainer div").each(function () {
       data.push({
-        img: `${process.env.READM_BASE_URL}${$(el).attr("src")}`,
+        img: `${process.env.MANGAMONKS_BASE_URL}${$(this)
+          .find("img")
+          .attr("src")}`,
       });
     });
 

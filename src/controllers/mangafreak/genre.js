@@ -7,7 +7,7 @@ export const mangafreakGenre = async (req, res) => {
 
     const data = {
       totalPages: 150,
-      currentPage: page || 1,
+      currentPage: parseInt(page) || 1,
       genreList: [],
       genre: [],
     };

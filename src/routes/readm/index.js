@@ -2,7 +2,7 @@ import express from "express";
 import { readmHome } from "../../controllers/readm/home.js";
 import { readmInfo } from "../../controllers/readm/info.js";
 import { readmChapters } from "../../controllers/readm/chapters.js";
-import { readmImage } from "../../controllers/readm/image.js";
+import { readmRead } from "../../controllers/readm/image.js";
 import { readmPopularManga } from "../../controllers/readm/popular-manga.js";
 import { readmLatestUpdates } from "../../controllers/readm/latest-updates.js";
 import { readmNewManga } from "../../controllers/readm/new-manga.js";
@@ -30,6 +30,6 @@ router.get("/info/:infoId", readmInfo);
 
 router.get("/chapters/:infoId", readmChapters);
 
-router.get("/image/:infoId/:chapter", readmImage);
+router.get("/read/:infoId/:chapter", readmRead);
 
 export default router;

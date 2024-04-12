@@ -7,7 +7,7 @@ export const readmLatestUpdates = async (req, res) => {
 
     const data = {
       totalPages: 539,
-      currentPage: page || 1,
+      currentPage: parseInt(page) || 1,
       latestUpdates: [],
     };
 

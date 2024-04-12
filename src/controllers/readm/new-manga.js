@@ -7,7 +7,7 @@ export const readmNewManga = async (req, res) => {
 
     const data = {
       totalPages: 718,
-      currentPage: page || 1,
+      currentPage: parseInt(page) || 1,
       newManga: [],
     };
 

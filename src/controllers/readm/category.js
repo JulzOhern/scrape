@@ -8,7 +8,7 @@ export const readmCategory = async (req, res) => {
 
     const data = {
       totalPages: 9,
-      currentPage: page || 1,
+      currentPage: parseInt(page) || 1,
       category: [],
     };
 
@@ -59,7 +59,7 @@ export const readmCategory = async (req, res) => {
       });
     });
 
-    return res.status(200).json(data.category);
+    return res.status(200).json(data);
   } catch (error) {
     return res.status(500).json("Error " + error.message);
   }

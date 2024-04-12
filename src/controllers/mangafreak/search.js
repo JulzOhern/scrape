@@ -8,7 +8,7 @@ export const mangafreakSearch = async (req, res) => {
 
     const data = {
       totalPages: 5,
-      currentPage: page || 1,
+      currentPage: parseInt(page) || 1,
       mangaManhwaResults: [],
       authorResults: [],
     };

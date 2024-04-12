@@ -7,7 +7,7 @@ export const readmPopularManga = async (req, res) => {
 
     const data = {
       totalPages: 1077,
-      currentPage: page || 1,
+      currentPage: parseInt(page) || 1,
       popular: [],
     };
 
