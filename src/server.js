@@ -4,6 +4,7 @@ import { config } from "dotenv";
 import readmRouter from "./routes/manga/readm/index.js";
 import mangafreakRouter from "./routes/manga/mangafreak/index.js";
 import mangamonksRouter from "./routes/manga/mangamonks/index.js";
+import andydayRouter from "./routes/movie/andyday/index.js";
 
 config();
 
@@ -18,5 +19,7 @@ app.get("/", async (_, res) => res.send(`<h1>Manga scrape</h1>`));
 app.use("/readm", readmRouter);
 app.use("/mangafreak", mangafreakRouter);
 app.use("/mangamonks", mangamonksRouter);
+
+app.use("/andyday", andydayRouter);
 
 app.listen(PORT, () => console.log("http://localhost:" + PORT));

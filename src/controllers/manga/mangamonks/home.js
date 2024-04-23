@@ -138,68 +138,68 @@ export const mangamonksHome = async (req, res) => {
         .replaceAll("\n", " "),
     });
 
-    $(".weekly-featured-area [aria-labelledby='daily-tab'] .row div").each(
-      (_, el) => {
-        $(el)
-          .find(".row .col-12")
-          .each((_, el) => {
-            data.featuredByDate.daily.push({
-              id: $(el).find("a").attr("href").split("/")[2],
-              img: $(el).find("img").attr("data-src"),
-              title: $(el).find("figcaption a:nth-child(1)").text().trim(),
-              genres: {
-                id: $(el)
-                  .find("figcaption a:nth-child(2)")
-                  .attr("href")
-                  .split("/")[2],
-                genre: $(el).find("figcaption a:nth-child(2)").text().trim(),
-              },
-            });
+    $(
+      ".weekly-featured-area [aria-labelledby='daily-tab'] .row div:nth-child(2)"
+    ).each((_, el) => {
+      $(el)
+        .find(".row .col-12")
+        .each((_, el) => {
+          data.featuredByDate.daily.push({
+            id: $(el).find("a").attr("href").split("/")[2],
+            img: $(el).find("img").attr("data-src"),
+            title: $(el).find("figcaption a:nth-child(1)").text().trim(),
+            genres: {
+              id: $(el)
+                .find("figcaption a:nth-child(2)")
+                .attr("href")
+                .split("/")[2],
+              genre: $(el).find("figcaption a:nth-child(2)").text().trim(),
+            },
           });
-      }
-    );
+        });
+    });
 
-    $(".weekly-featured-area [aria-labelledby='weekly-tab'] .row div").each(
-      (_, el) => {
-        $(el)
-          .find(".row .col-12")
-          .each((_, el) => {
-            data.featuredByDate.weekly.push({
-              id: $(el).find("a").attr("href").split("/")[2],
-              img: $(el).find("img").attr("data-src"),
-              title: $(el).find("figcaption a:nth-child(1)").text().trim(),
-              genres: {
-                id: $(el)
-                  .find("figcaption a:nth-child(2)")
-                  .attr("href")
-                  .split("/")[2],
-                genre: $(el).find("figcaption a:nth-child(2)").text().trim(),
-              },
-            });
+    $(
+      ".weekly-featured-area [aria-labelledby='weekly-tab'] .row div:nth-child(2)"
+    ).each((_, el) => {
+      $(el)
+        .find(".row .col-12")
+        .each((_, el) => {
+          data.featuredByDate.weekly.push({
+            id: $(el).find("a").attr("href").split("/")[2],
+            img: $(el).find("img").attr("data-src"),
+            title: $(el).find("figcaption a:nth-child(1)").text().trim(),
+            genres: {
+              id: $(el)
+                .find("figcaption a:nth-child(2)")
+                .attr("href")
+                .split("/")[2],
+              genre: $(el).find("figcaption a:nth-child(2)").text().trim(),
+            },
           });
-      }
-    );
+        });
+    });
 
-    $(".weekly-featured-area [aria-labelledby='monthly-tab'] .row div").each(
-      (_, el) => {
-        $(el)
-          .find(".row .col-12")
-          .each((_, el) => {
-            data.featuredByDate.monthly.push({
-              id: $(el).find("a").attr("href").split("/")[2],
-              img: $(el).find("img").attr("data-src"),
-              title: $(el).find("figcaption a:nth-child(1)").text().trim(),
-              genres: {
-                id: $(el)
-                  .find("figcaption a:nth-child(2)")
-                  .attr("href")
-                  .split("/")[2],
-                genre: $(el).find("figcaption a:nth-child(2)").text().trim(),
-              },
-            });
+    $(
+      ".weekly-featured-area [aria-labelledby='monthly-tab'] .row div:nth-child(2)"
+    ).each((_, el) => {
+      $(el)
+        .find(".row .col-12")
+        .each((_, el) => {
+          data.featuredByDate.monthly.push({
+            id: $(el).find("a").attr("href").split("/")[2],
+            img: $(el).find("img").attr("data-src"),
+            title: $(el).find("figcaption a:nth-child(1)").text().trim(),
+            genres: {
+              id: $(el)
+                .find("figcaption a:nth-child(2)")
+                .attr("href")
+                .split("/")[2],
+              genre: $(el).find("figcaption a:nth-child(2)").text().trim(),
+            },
           });
-      }
-    );
+        });
+    });
 
     $(
       ".arrivals-area .container .row div:nth-child(1) div:nth-child(2) .tab-content .tab-pane"
